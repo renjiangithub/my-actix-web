@@ -703,7 +703,8 @@ mod rustls_0_23 {
             Error = TlsError<io::Error, DispatchError>,
             InitError = (),
         > {
-            let mut protos = vec![b"h2".to_vec(), b"http/1.1".to_vec()];
+            // let mut protos = vec![b"h2".to_vec(), b"http/1.1".to_vec()];    // old code
+            let mut protos = vec![b"http/1.1".to_vec()];    //renjian modify at 20241119
             protos.extend_from_slice(&config.alpn_protocols);
             config.alpn_protocols = protos;
 
